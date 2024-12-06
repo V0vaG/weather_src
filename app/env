@@ -1,3 +1,4 @@
 VOLUMES="['/home/ubuntu/script_files/weather/json/:/~/json', '/home/ubuntu/script_files/weather/logs/:/~/logs']"
 COLOR='red'
 BUILD_ARGS='--build-arg API_KEY=${{ secrets.API_KEY }}'
+BUILD='docker build --build-arg API_KEY=${{ secrets.API_KEY }} --build-arg VERSION=${{ env.VERSION }} --build-arg COLOR=${{ env.COLOR }} -t vova0911/web_app_images:latest ./app'
