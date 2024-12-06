@@ -1,2 +1,3 @@
 VOLUMES="['/home/ubuntu/script_files/weather/json/:/~/json', '/home/ubuntu/script_files/weather/logs/:/~/logs']"
 COLOR='red'
+BUILD_ARGS='--build-arg VERSION=1.0.0 --build-arg API_KEY=${{ secrets.API_KEY }}'
