@@ -39,7 +39,7 @@ metrics = PrometheusMetrics(app)
 
 # Configure Flask logging
 app.logger.setLevel(logging.INFO)  # Set log level to INFO
-handler = logging.FileHandler('~/script_files/weather/logs/app.log')  # Log to a file
+handler = logging.FileHandler('./logs/app.log')  # Log to a file
 app.logger.addHandler(handler)
 
 
@@ -53,7 +53,7 @@ dt = datetime.now()
 def make_json(city):
     os.system("sh json_fix.sh")
     dict1 = {"city": city, "data_time": datetime.now().strftime("%d-%m-%Y %H:%M:%S"), "host_name": socket.gethostname()}
-    out_file = open("json/myfile.json", "a")
+    out_file = open("./json/myfile.json", "a")
     json.dump(dict1, out_file, indent=4)
     out_file.close()
     os.system("sh json_fix2.sh")
@@ -61,11 +61,11 @@ def make_json(city):
 
 @app.route("/json")
 def download_json():
-    return send_from_directory('~/script_files/weather/json/', 'myfile.json', as_attachment=True)
+    return send_from_directory("./json/", 'myfile.json', as_attachment=True)
     
 @app.route("/logs")
 def download_logs():
-    return send_from_directory('~/script_files/weather/logs/', 'app.log', as_attachment=True)
+    return send_from_directory('./logs/', 'app.log', as_attachment=True)
 
 @app.route("/metrics")
 def metrics():
