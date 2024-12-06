@@ -1,2 +1,2 @@
-VOLUMES="['/home/$USER/script_files/weather/json/:/~/json', '/home/$USER/script_files/weather/logs/:/~/logs']"
+VOLUMES="['/home/ubuntu/script_files/weather/json/:/~/json', '/home/ubuntu/script_files/weather/logs/:/~/logs']"
 COLOR='red'
