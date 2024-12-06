@@ -1,0 +1,2 @@
+VOLUMES="['/home/$USER/script_files/${proejct}/json/:/~/json', '/home/$USER/script_files/${proejct}/logs/:/~/logs']"
+COLOR='red'
