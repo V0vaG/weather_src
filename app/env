@@ -1,5 +1,5 @@
 VOLUMES="['/home/ubuntu/script_files/weather/json/:/~/json', '/home/ubuntu/script_files/weather/logs/:/~/logs']"
-COLOR='blue'
+COLOR='green'
 VERSION='1.0.478'
 PORT='85'
 
